@@ -1,0 +1,17 @@
+{
+  "name": "the-siren-backend",
+  "version": "1.0.0",
+  "description": "A diverse blog website for posting various articles like Technology, Fitness, Food, Bollywood, Hollywood etc.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "Rajesh Bhattarai",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  }
+}
