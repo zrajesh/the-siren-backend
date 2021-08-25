@@ -1,6 +1,6 @@
 # The Siren Backend
 
-A diverse blog website for posting various articles like Technology, Fitness, Food, Bollywood, Hollywood etc.
+A diverse blog webapp for posting various articles like Technology, Fitness, Food, Bollywood, Hollywood etc.
 
 # Link to Frontend:
 
