@@ -1,5 +1,7 @@
 // Imports
 const express = require("express");
+const mongoose = require("mongoose");
+require('dotenv').config();
 // Route imports
 const homeRoutes = require("./routes/home");
 const bollywoodRoutes = require("./routes/bollywood");
@@ -9,8 +11,14 @@ const foodRoutes = require("./routes/food");
 const technologyRoutes = require("./routes/technology");
 // Calling express method
 const app = express();
+
 // Port
 const PORT = process.env.PORT || 5000;
+
+// DB connection
+mongoose.connect(process.env.DB)
+    .then(() => console.log("DB CONNECTED"))
+    .catch(err => console.log("DB CONNECTION ERROR: ", err))
 
 // Routes
 app.use("/", homeRoutes);
@@ -23,4 +31,5 @@ app.use("/api", technologyRoutes);
 // Listening to port
 app.listen(PORT, () => {
     console.log(`Server is running at port: ${PORT}`);
-})
+});
+
