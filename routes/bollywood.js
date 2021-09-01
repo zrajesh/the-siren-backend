@@ -2,11 +2,13 @@
 const express = require("express");
 const router = express.Router();
 // Controller imports
-const { bollywoodLeft, bollywoodRight } = require("../controllers/bollywood");
+const { getBollywoodData, postBollywoodData } = require("../controllers/bollywood");
 
 // Routes
-// Bollywood route -> GET
-router.get("/bollywood/left", bollywoodLeft);
-router.get("/bollywood/right", bollywoodRight);
+// Bollywood 
+// Route -> POST
+router.post("/bollywood", postBollywoodData);
+// Route -> GET
+router.get("/bollywood", getBollywoodData);
 
 module.exports = router;

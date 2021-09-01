@@ -1,11 +1,27 @@
-// Import data
-const { fitnessLeft, fitnessRight } = require("../blogData/fitness");
+// Import model
+const Fitness = require("../models/fitness");
 
-// Fitness controller
-exports.fitnessLeft = (req, res) => {
-    res.json(fitnessLeft);
+// Bollywood controller
+// Post a blog
+exports.postFitnessData = (req, res) => {
+    const blog = new Fitness(req.body);
+    blog.save((err, blog) => {
+        if (err) {
+            return res.status(400).json({
+                err: "unable to save blog in DB"
+            })
+        }
+        res.status(200).json(blog);
+    });
 }
-
-exports.fitnessRight = (req, res) => {
-    res.json(fitnessRight);
+// Get all blogs
+exports.getFitnessData = (req, res) => {
+    Fitness.find((err, blogs) => {
+        if (err) {
+            return res.status(400).json({
+                err: "Failed to get all blogs"
+            });
+        }
+        res.status(200).json(blogs)
+    })
 }

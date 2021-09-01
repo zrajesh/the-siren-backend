@@ -2,11 +2,13 @@
 const express = require("express");
 const router = express.Router();
 // Controller imports
-const { hollywoodLeft, hollywoodRight } = require("../controllers/hollywood");
+const { getHollywoodData, postHollywoodData } = require("../controllers/hollywood");
 
 // Routes
-// Hollywood route -> GET
-router.get("/hollywood/left", hollywoodLeft);
-router.get("/hollywood/right", hollywoodRight);
+// Bollywood 
+// Route -> POST
+router.post("/hollywood", postHollywoodData);
+// Route -> GET
+router.get("/hollywood", getHollywoodData);
 
 module.exports = router;

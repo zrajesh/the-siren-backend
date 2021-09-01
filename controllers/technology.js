@@ -1,11 +1,27 @@
-// Import data
-const { technologyLeft, technologyRight } = require("../blogData/technology");
+// Import model
+const Technology = require("../models/technology");
 
-// Technology controller
-exports.technologyLeft = (req, res) => {
-    res.json(technologyLeft);
+// Bollywood controller
+// Post a blog
+exports.postTechnologyData = (req, res) => {
+    const blog = new Technology(req.body);
+    blog.save((err, blog) => {
+        if (err) {
+            return res.status(400).json({
+                err: "unable to save blog in DB"
+            })
+        }
+        res.status(200).json(blog);
+    });
 }
-
-exports.technologyRight = (req, res) => {
-    res.json(technologyRight);
+// Get all blogs
+exports.getTechnologyData = (req, res) => {
+    Technology.find((err, blogs) => {
+        if (err) {
+            return res.status(400).json({
+                err: "Failed to get all blogs"
+            });
+        }
+        res.status(200).json(blogs)
+    })
 }

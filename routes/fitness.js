@@ -2,11 +2,13 @@
 const express = require("express");
 const router = express.Router();
 // Controller imports
-const { fitnessLeft, fitnessRight } = require("../controllers/fitness");
+const { getFitnessData, postFitnessData } = require("../controllers/fitness");
 
 // Routes
-// Fitness route -> GET
-router.get("/fitness/left", fitnessLeft);
-router.get("/fitness/right", fitnessRight);
+// Bollywood 
+// Route -> POST
+router.post("/fitness", postFitnessData);
+// Route -> GET
+router.get("/fitness", getFitnessData);
 
 module.exports = router;

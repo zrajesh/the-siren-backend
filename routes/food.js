@@ -2,11 +2,13 @@
 const express = require("express");
 const router = express.Router();
 // Controller imports
-const { foodLeft, foodRight } = require("../controllers/food");
+const { getFoodData, postFoodData } = require("../controllers/food");
 
 // Routes
-// Food route -> GET
-router.get("/food/left", foodLeft);
-router.get("/food/right", foodRight);
+// Bollywood 
+// Route -> POST
+router.post("/food", postFoodData);
+// Route -> GET
+router.get("/food", getFoodData);
 
 module.exports = router;

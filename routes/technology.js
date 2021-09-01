@@ -2,11 +2,13 @@
 const express = require("express");
 const router = express.Router();
 // Controller imports
-const { technologyLeft, technologyRight } = require("../controllers/technology");
+const { getTechnologyData, postTechnologyData } = require("../controllers/technology");
 
 // Routes
-// Technology route -> GET
-router.get("/technology/left", technologyLeft);
-router.get("/technology/right", technologyRight);
+// Bollywood 
+// Route -> POST
+router.post("/technology", postTechnologyData);
+// Route -> GET
+router.get("/technology", getTechnologyData);
 
 module.exports = router;

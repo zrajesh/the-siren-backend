@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 const {Schema} = mongoose;
 
-const bollywoodSchema = new Schema({
+const foodSchema = new Schema({
     imageUrl: {
         type: String,
         required: true,
@@ -34,4 +34,4 @@ const bollywoodSchema = new Schema({
     rank: String
 }, {timestamps: true});
 
-module.exports = mongoose.model("Bollywood", bollywoodSchema);
+module.exports = mongoose.model("Food", foodSchema);

@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require('dotenv').config();
+const cors = require("cors");
 // Route imports
 const homeRoutes = require("./routes/home");
 const bollywoodRoutes = require("./routes/bollywood");
@@ -20,8 +21,11 @@ mongoose.connect(process.env.DB)
     .then(() => console.log("DB CONNECTED"))
     .catch(err => console.log("DB CONNECTION ERROR: ", err))
 
+// Middlewares
+app.use(express.json());
+app.use(cors());
 // Routes
-app.use("/", homeRoutes);
+app.use("/api", homeRoutes);
 app.use("/api", bollywoodRoutes);
 app.use("/api", hollywoodRoutes);
 app.use("/api", fitnessRoutes);
