@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "A diverse blog website for posting various articles like Technology, Fitness, Food, Bollywood, Hollywood etc.",
   "main": "app.js",
+  "engines": {
+    "node": "14.15.1",
+    "npm": "6.14.8"
+  },
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"

@@ -2,7 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require('dotenv').config();
-const cors = require("cors");
+const cors = require('cors');
 // Route imports
 const homeRoutes = require("./routes/home");
 const bollywoodRoutes = require("./routes/bollywood");
